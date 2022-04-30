@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'org.danielkaneider'
+version = '0.9.1'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'commons-cli:commons-cli:1.5.0'
+
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

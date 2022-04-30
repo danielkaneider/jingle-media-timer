@@ -1,0 +1,34 @@
+jingle:
+
+  # how many steps the reduce/increase volume key should be pressed
+  volumeSteps: 10
+
+  waitBetweenVolumeChangeMillis: 2
+
+  # Section containing options for the start-jingle. It is executed AFTER the game started.
+  start-jingle:
+    enabled: true
+    file: media/Start.mid
+
+    # Duration of the jingle in seconds. The playback will be stopped after this amount of seconds
+    duration-in-seconds: 5
+
+    # Some waiting time (eg. silence) after the jingle is stopped.
+    sleep-after-jingle-in-seconds: 0
+
+    # The volume boost for the jingle. 0 (low volume) to 127 (high volume).
+    volume: 70 # 0 .. 127
+
+    # Should the regular media playback be paused, or should the volume be reduced. See the jingle.volumeSteps for
+    # further fine-tuning
+    pause-media: true
+
+  # Section containing options for the end-jingle. It is executed BEFORE the game time is up. The options are the same
+  # as for the section above
+  before-end-jingle:
+    enabled: true
+    file: media/BeforeEnd.mid
+    duration-in-seconds: 24
+    sleep-after-jingle-in-seconds: 1
+    volume: 110 # 0 .. 127
+    pause-media: false

@@ -1,0 +1,7 @@
+jingle:
+
+  start-jingle:
+    duration-in-seconds: 3
+
+  before-end-jingle:
+    duration-in-seconds: 3
